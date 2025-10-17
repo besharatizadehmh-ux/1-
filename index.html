@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>مؤسسه فرهنگی آموزشی بقیةالله عج</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'B Nazanin', 'Tahoma', sans-serif;
+            background: linear-gradient(145deg, #f9f7f0 0%, #eef6e8 100%);
+            color: #2c4a30;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* هدر با عنوان موسسه */
+        .site-header {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(248, 244, 233, 0.6);
+            backdrop-filter: blur(2px);
+            border-bottom: 1px solid #dcead5;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .site-header h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            color: #2c4a30;
+            letter-spacing: -0.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .site-header .subtitle {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            color: #5a7a50;
+            font-style: normal;
+            opacity: 0;
+            animation: fadeIn 1.5s 0.3s forwards;
+        }
+
+        /* نوار منو */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(58, 95, 64, 0.92);
+            color: white;
+            backdrop-filter: blur(4px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-start;
+        }
+
+        .nav-links li {
+            margin: 0 1.1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            right: 50%;
+            width: 0;
+            height: 2px;
+            background: #f1c40f;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-links a:hover::after {
+            width: 60%;
+            right: 20%;
+        }
+
+        .auth-btn {
+            background: rgba(248, 244, 233, 0.9);
+            color: #3a5f40;
+            border: 1px solid #d0d9c8;
+            padding: 0.6rem 1.4rem;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .auth-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        /* منوی کشویی ارتباط با ما */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            list-style: none;
+            padding: 8px 0;
+            margin: 8px 0 0;
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #3a5f40;
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f0f7ed;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* محتوای اصلی */
+        main {
+            padding: 3rem 1.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .bismillah {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #3a5f40;
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeInUp 1s 0.5s forwards;
+        }
+
+        .bismillah-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #5a7a50;
+            margin-bottom: 2.5rem;
+            font-style: normal;
+            opacity: 0;
+            animation: fadeInUp 1s 0.7s forwards;
+        }
+
+        .welcome-text {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s 0.9s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3a5f40, #5a7a50);
+        }
+
+        .welcome-text p {
+            margin-bottom: 1.1rem;
+            font-size: 1.1rem;
+            padding-right: 12px;
+        }
+
+        .highlight {
+            color: #3a5f40;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 2.5rem auto 0;
+            padding: 14px 40px;
+            background: linear-gradient(to left, #3a5f40, #2c4a30);
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(58, 95, 64, 0.3);
+            transition: all 0.4s;
+            opacity: 0;
+            animation: fadeInUp 1s 1.1s forwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(58, 95, 64, 0.4);
+        }
+
+        /* فوتر */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9f7;
+            color: #7f8c8d;
+            margin-top: 3rem;
+            font-size: 1rem;
+            border-top: 1px solid #eaeaea;
+        }
+
+        /* انیمیشن‌ها */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* موبایل */
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 1rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .site-header h1 {
+                font-size: 1.8rem;
+            }
+            .bismillah {
+                font-size: 2rem;
+            }
+            .bismillah-subtitle {
+                font-size: 1.15rem;
+            }
+            main {
+                padding: 2rem 1rem;
+            }
+            .welcome-text p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<title>مؤسسه فرهنگی آموزشی بقیةالله عج | آموزش قرآن، علوم اسلامی و فرهنگ اهل‌بیت (ع)</title>
+<meta name="description" content="مؤسسه فرهنگی آموزشی بقیةالله عج با هدف گسترش فرهنگ قرآنی، آموزش علوم اسلامی، تربیت نسل متعهد و همراهی در راه فرج آقا (عج) فعالیت می‌کند. ثبت‌نام در دوره‌ها، وبلاگ‌های آموزشی و ارتباط با ما.">
+<meta name="keywords" content="بقیةالله عج, مؤسسه قرآنی, آموزش علوم اسلامی, ثبت نام دوره قرآن, انتظار فرج, اهل بیت, امام زمان عج, فرهنگ اسلامی, وبلاگ مذهبی, کانال ایتا بقیةالله">
+<meta property="og:title" content="مؤسسه فرهنگی آموزشی بقیةالله عج">
+<meta property="og:description" content="با ما همراه باشید تا در راه فرج آقا (عج) گام برداریم. آموزش، تربیت و همراهی معنوی.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:image" content="https://besharatizadehmh-ux.github.io/1-/https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.asr-entezar.ir%2Farchives%2F65377&psig=AOvVaw152kxzJjZTuPjFPjCGTbDP&ust=1760728730087000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMCW-ua3qZADFQAAAAAdAAAAABAE">
+<link rel="canonical" href="https://yourdomain.com/" />
+
+<body>
+
+    <!-- هدر با عنوان موسسه -->
+    <header>
+        <div class="site-header">
+            <h1>مؤسسه فرهنگی آموزشی بقیةالله عج</h1>
+            <p class="subtitle">اللهم بارک لمولانا صاحب العصر و الزمان</p>
+        </div>
+
+        <!-- نوار منو -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="about.html">معرفی موسسه</a></li>
+                <li><a href="blogs.html">وبلاگ‌ها</a></li>
+                <li class="dropdown">
+                    <a href="#" id="contactToggle">ارتباط با ما</a>
+                    <ul class="dropdown-menu" id="contactMenu">
+                        <li><a href="https://eitaa.com/bagheiat313" target="_blank" rel="noopener">کانال ایتا</a></li>
+                        <li><a href="https://www.instagram.com/baghiyat313a?igsh=dmEyYno0MHdyNDRz" target="_blank" rel="noopener">اینستاگرام</a></li>
+                        <li><a href="register.html">ثبت‌نام</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="register.html" class="auth-btn">ورود / ثبت‌نام</a>
+        </nav>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        <div class="bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِیمِ</div>
+        <p class="bismillah-subtitle">به نام خداوند بخشنده مهربان</p>
+
+        <div class="welcome-text">
+            <p>
+                سلام خوش اومدی به سایت مؤسسه فرهنگی آموزشی <span class="highlight">بقیةالله عج</span>.
+            </p>
+            <p>
+                مؤسسه ما ترویج فرهنگ قرآنی، آموزش علوم اسلامی و تربیت نسلی آگاه و متعهد فعالیت می‌کنه.
+            </p>
+            <p>
+                در این سایت می‌تونید در دوره‌های آموزشی ثبت‌نام کنید، با فعالیت‌های موسسه آشنا بشین و از منابع قرآنی و مذهبی بهره‌مند بشین.
+            </p>
+        </div>
+
+        <a href="register.html" class="cta-button">همین الان ثبت‌نام کن</a>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <p>© ۱۴۰۴ — مؤسسه فرهنگی آموزشی بقیةالله عج | همه حقوق محفوظ است.</p>
+    </footer>
+
+</body>
+</html>
+
+google-site-verification: google064e1aa1f09f9b81.html

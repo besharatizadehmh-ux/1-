@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>انتخاب نام کاربری — مؤسسه بقیةالله عج</title>
+    <style>
+        :root {
+            --primary: #3a5f40;
+            --primary-dark: #2c4a30;
+            --text: #2c4a30;
+            --card-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.07);
+        }
+        body {
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            background: linear-gradient(-45deg, #f8f4e9, #f0f7ed, #e8f4e5, #fdfbf5, #f9f7f0, #f5f8f0);
+            background-size: 400% 400%;
+            animation: gradientBG 30s ease infinite;
+            color: var(--text);
+            padding: 20px;
+            direction: rtl;
+            min-height: 100vh;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c5d5b8;
+            border-radius: 10px;
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            font-size: 1.05rem;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>انتخاب نام کاربری و رمز عبور</h2>
+        <form id="credentialsForm">
+            <div class="form-group">
+                <label for="username">نام کاربری</label>
+                <input type="text" id="username" required placeholder="مثال: baghiyat_123456">
+            </div>
+            <div class="form-group">
+                <label for="password">رمز عبور</label>
+                <input type="password" id="password" required minlength="6" placeholder="حداقل 6 کاراکتر">
+            </div>
+            <button type="submit" class="submit-btn">تایید و ثبت نهایی</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('credentialsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // خواندن اطلاعات مرحله اول
+            const userData = JSON.parse(localStorage.getItem('tempUserData') || '{}');
+            
+            // ساخت نام کاربری رندم (اگر خالی بود)
+            const finalUsername = username || `baghiyat_${Math.floor(100000 + Math.random() * 900000)}`;
+            
+            // ترکیب داده‌ها
+            const fullUser = {
+                ...userData,
+                username: finalUsername,
+                password: password
+            };
+            
+            // ذخیره در لیست کاربران (برای سیستم ورود)
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            users.push(fullUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            // ذخیره در لیست ثبت‌نام‌ها (برای پنل مدیریت)
+            const registrations = JSON.parse(localStorage.getItem('registrations') || '[]');
+            registrations.push(fullUser);
+            localStorage.setItem('registrations', JSON.stringify(registrations));
+            
+            // ذخیره برای نمایش در صفحه موفقیت
+            localStorage.setItem('currentUser', JSON.stringify(fullUser));
+            
+            // رفتن به صفحه نهایی
+            window.location.href = 'register-success.html';
+        });
+    </script>
+</body>
+</html>

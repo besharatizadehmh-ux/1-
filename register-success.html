@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ثبت‌نام موفق — مؤسسه بقیةالله عج</title>
+    <style>
+        :root {
+            --primary: #3a5f40;
+            --primary-dark: #2c4a30;
+            --text: #2c4a30;
+            --card-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.07);
+        }
+        body {
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            background: linear-gradient(-45deg, #f8f4e9, #f0f7ed, #e8f4e5, #fdfbf5, #f9f7f0, #f5f8f0);
+            background-size: 400% 400%;
+            animation: gradientBG 30s ease infinite;
+            color: var(--text);
+            padding: 20px;
+            direction: rtl;
+            min-height: 100vh;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+        h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .info-card {
+            background: #f8f9f7;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px dashed #c5d5b8;
+        }
+        .info-item {
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+        .info-label {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            min-width: 150px;
+        }
+        .print-btn {
+            background: #e8f4e5;
+            color: var(--primary);
+            border: 1px solid #c5d5b8;
+        }
+        .login-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+        .print-btn:hover {
+            background: #d0e8d0;
+        }
+        .login-btn:hover {
+            background: var(--primary-dark);
+        }
+        @media print {
+            .buttons {
+                display: none;
+            }
+            body {
+                background: white !important;
+            }
+            .container {
+                box-shadow: none;
+                border: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ثبت‌نام شما با موفقیت انجام شد!</h2>
+        
+        <div class="info-card" id="userInfo">
+            <!-- اطلاعات کاربر اینجا نمایش داده می‌شود -->
+        </div>
+
+        <div class="buttons">
+            <button class="btn print-btn" onclick="window.print()">پرینت / ذخیره PDF</button>
+            <a href="login.html" class="btn login-btn">ورود به پنل کاربری</a>
+        </div>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if (!user) {
+            alert('خطا: اطلاعات کاربر یافت نشد.');
+            window.location.href = 'register.html';
+        } else {
+            document.getElementById('userInfo').innerHTML = `
+                <div class="info-item"><span class="info-label">نام کاربری:</span> ${user.username}</div>
+                <div class="info-item"><span class="info-label">رمز عبور:</span> ${user.password}</div>
+                <div class="info-item"><span class="info-label">نام و نام خانوادگی:</span> ${user.fullname}</div>
+                <div class="info-item"><span class="info-label">کد ملی:</span> ${user.nationalId}</div>
+                <div class="info-item"><span class="info-label">شماره همراه:</span> ${user.mobile}</div>
+                <div class="info-item"><span class="info-label">تاریخ ثبت‌نام:</span> ${new Date(user.timestamp).toLocaleDateString('fa-IR')}</div>
+            `;
+        }
+    </script>
+</body>
+</html>

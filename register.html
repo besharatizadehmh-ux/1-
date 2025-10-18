@@ -5,65 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ثبت‌نام — مؤسسه فرهنگی آموزشی بقیةالله عج</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        :root {
+            --primary: #3a5f40;
+            --primary-dark: #2c4a30;
+            --text: #2c4a30;
+            --card-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.07);
         }
-
         body {
-            font-family: 'B Nazanin', 'Tahoma', sans-serif;
-            background: linear-gradient(135deg, #f8f4e9 0%, #e8f4e5 100%);
-            color: #2c4a30;
-            line-height: 1.6;
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            background: linear-gradient(-45deg, #f8f4e9, #f0f7ed, #e8f4e5, #fdfbf5, #f9f7f0, #f5f8f0);
+            background-size: 400% 400%;
+            animation: gradientBG 30s ease infinite;
+            color: var(--text);
             padding: 20px;
+            direction: rtl;
             min-height: 100vh;
         }
-
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         .container {
             max-width: 650px;
             margin: 30px auto;
-            background: white;
+            background: var(--card-bg);
             border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 20px var(--shadow);
             overflow: hidden;
         }
-
         .header {
-            background: #3a5f40;
+            background: var(--primary);
             color: white;
             padding: 24px 20px;
             text-align: center;
         }
-
         .header h1 {
             font-size: 1.6rem;
             font-weight: bold;
             margin-bottom: 8px;
         }
-
         .header p {
             font-size: 1rem;
             opacity: 0.9;
-            font-style: normal;
         }
-
         .form {
             padding: 28px;
         }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #2c4a30;
+            color: var(--text);
             font-size: 1.05rem;
         }
-
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -71,46 +70,44 @@
             padding: 12px;
             border: 1px solid #c5d5b8;
             border-radius: 10px;
-            font-family: 'B Nazanin', 'Tahoma', sans-serif;
+            font-family: 'B Nazanin', Tahoma, sans-serif;
             font-size: 1.05rem;
             color: #3a5f40;
             background-color: #fcfdfa;
-            transition: border-color 0.3s, box-shadow 0.3s;
         }
-
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3a5f40;
+            border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(58, 95, 64, 0.15);
         }
-
         .form-group textarea {
             min-height: 70px;
             resize: vertical;
         }
-
         .submit-btn {
             width: 100%;
             padding: 14px;
-            background: #3a5f40;
+            background: var(--primary);
             color: white;
             border: none;
             border-radius: 12px;
             font-size: 1.2rem;
             font-weight: bold;
+            cursor: not-allowed;
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        .submit-btn.active {
             cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 10px;
+            opacity: 1;
             box-shadow: 0 4px 6px rgba(58, 95, 64, 0.2);
         }
-
-        .submit-btn:hover {
-            background: #2c4a30;
+        .submit-btn.active:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
-
         .footer-note {
             text-align: center;
             margin-top: 20px;
@@ -132,32 +129,26 @@
                     <label for="fullname">نام و نام خانوادگی</label>
                     <input type="text" id="fullname" name="fullname" required>
                 </div>
-
                 <div class="form-group">
                     <label for="nationalId">کد ملی</label>
                     <input type="text" id="nationalId" name="nationalId" inputmode="numeric" required>
                 </div>
-
                 <div class="form-group">
                     <label for="fatherName">نام پدر</label>
                     <input type="text" id="fatherName" name="fatherName" required>
                 </div>
-
                 <div class="form-group">
                     <label for="birthDate">تاریخ تولد</label>
                     <input type="text" id="birthDate" name="birthDate" placeholder="مثال: ۱۳۷۵/۰۵/۱۲" required>
                 </div>
-
                 <div class="form-group">
                     <label for="mobile">شماره تلفن همراه</label>
                     <input type="tel" id="mobile" name="mobile" inputmode="tel" placeholder="مثال: ۰۹۱۲۳۴۵۶۷۸۹" required>
                 </div>
-
                 <div class="form-group">
                     <label for="eitaa">شماره فعال در ایتا</label>
                     <input type="tel" id="eitaa" name="eitaa" inputmode="tel" placeholder="مثال: ۰۹۱۲۳۴۵۶۷۸۹">
                 </div>
-
                 <div class="form-group">
                     <label for="education">مقطع تحصیلی</label>
                     <select id="education" name="education" required>
@@ -173,12 +164,10 @@
                         <option value="سایر">سایر</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="address">آدرس محل زندگی</label>
                     <textarea id="address" name="address" placeholder="شهر، خیابان، پلاک..." required></textarea>
                 </div>
-
                 <div class="form-group">
                     <label for="maritalStatus">وضعیت تاهل</label>
                     <select id="maritalStatus" name="maritalStatus" required>
@@ -189,13 +178,12 @@
                         <option value="مطلقه">مطلقه / مطلّق</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="howKnown">نحوه آشنایی با موسسه</label>
-                    <textarea id="howKnown" name="howKnown" placeholder=" مثلاً: از طریق دوستان، شبکه‌های اجتماعی، تبلیغات ، سایت و ..."></textarea>
+                    <textarea id="howKnown" name="howKnown" placeholder="مثلاً: از طریق دوستان ، شبکه‌های اجتماعی ، سایت و ..."></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">ثبت اطلاعات</button>
+                <button type="submit" class="submit-btn" id="submitBtn">ثبت اطلاعات</button>
 
                 <div class="footer-note">
                     اطلاعات شما با دقت و احترام نگهداری می‌شود.
@@ -205,21 +193,40 @@
     </div>
 
     <script>
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
+        const form = document.getElementById('registerForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // بررسی پر بودن همه فیلدهای اجباری
+        function checkFormValidity() {
+            const requiredFields = form.querySelectorAll('[required]');
+            let allFilled = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    allFilled = false;
+                }
+            });
+            submitBtn.classList.toggle('active', allFilled);
+        }
+
+        // رویداد برای هر تغییر در فیلدها
+        form.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('input', checkFormValidity);
+        });
+
+        // ارسال فرم
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
+            if (!submitBtn.classList.contains('active')) return;
+
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            data.timestamp = new Date().toISOString();
+            const userData = Object.fromEntries(formData.entries());
+            userData.timestamp = new Date().toISOString();
 
-            // خواندن داده‌های قبلی از LocalStorage
-            const allData = JSON.parse(localStorage.getItem('registrations') || '[]');
-            allData.push(data);
-
-            // ذخیره مجدد
-            localStorage.setItem('registrations', JSON.stringify(allData));
-
-            alert('✅ ثبت‌نام شما با موفقیت انجام شد.');
-            this.reset();
+            // ذخیره در LocalStorage برای مرحله بعد
+            localStorage.setItem('tempUserData', JSON.stringify(userData));
+            
+            // رفتن به مرحله بعد
+            window.location.href = 'register-step2.html';
         });
     </script>
 </body>

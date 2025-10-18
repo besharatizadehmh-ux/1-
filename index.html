@@ -4,138 +4,120 @@
     <meta name="google-site-verification" content="U-KsNn6Pes1ZcC5_WSA5XHrxK5bqqYDA0JX1l-6xjfc" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>مؤسسه فرهنگی آموزشی بقیةالله عج</title>
+    <title>مؤسسه فرهنگی آموزشی بقیةالله عج | آموزش قرآن، علوم اسلامی و فرهنگ اهل‌بیت (ع)</title>
+    <meta name="description" content="مؤسسه فرهنگی آموزشی بقیةالله عج با هدف گسترش فرهنگ قرآنی، آموزش علوم اسلامی، تربیت نسل متعهد و همراهی در راه فرج آقا (عج) فعالیت می‌کند.">
+    <meta name="keywords" content="بقیةالله عج, مؤسسه قرآنی, آموزش علوم اسلامی, ثبت نام دوره قرآن, انتظار فرج, اهل بیت, امام زمان عج">
+    <meta property="og:title" content="مؤسسه فرهنگی آموزشی بقیةالله عج">
+    <meta property="og:description" content="با ما همراه باشید تا در راه فرج آقا (عج) گام برداریم. آموزش، تربیت و همراهی معنوی.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://besharatizadehmh-ux.github.io/1-/">
+    <link rel="canonical" href="https://besharatizadehmh-ux.github.io/1-/" />
     <style>
+        /* === #1: ریست و متغیرهای پایه === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font-family: 'B Nazanin', 'Tahoma', sans-serif;
-            background: linear-gradient(145deg, #f9f7f0 0%, #eef6e8 100%);
-            color: #2c4a30;
-            overflow-x: hidden;
-            line-height: 1.7;
+        :root {
+            --primary: #3a5f40;
+            --primary-dark: #2c4a30;
+            --gold: #d4af37;
+            --text: #2c4a30;
+            --text-secondary: #5a7a50;
+            --card-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.07);
+            --shadow-hover: rgba(0,0,0,0.12);
+            --font-fa: 'B Nazanin', 'Tahoma', sans-serif;
         }
 
-        /* هدر با عنوان موسسه */
+        /* === #2: پس‌زمینهٔ گرادیان ملایم و متحرک === */
+        body {
+            font-family: var(--font-fa);
+            background: linear-gradient(-45deg, #f8f4e9, #f0f7ed, #e8f4e5, #fdfbf5, #f9f7f0, #f5f8f0);
+            background-size: 400% 400%;
+            animation: gradientBG 30s ease infinite;
+            color: var(--text);
+            direction: rtl;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* === #3: هدر با عنوان موسسه === */
         .site-header {
             text-align: center;
             padding: 2rem 1.5rem;
-            background: rgba(248, 244, 233, 0.6);
-            backdrop-filter: blur(2px);
+            background: rgba(248, 244, 233, 0.65);
+            backdrop-filter: blur(4px);
             border-bottom: 1px solid #dcead5;
-            animation: fadeInDown 1s ease-out;
         }
-
         .site-header h1 {
             font-size: 2.2rem;
             font-weight: bold;
-            margin: 0;
-            color: #2c4a30;
-            letter-spacing: -0.5px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            color: var(--text);
         }
-
         .site-header .subtitle {
             margin-top: 0.8rem;
             font-size: 1.2rem;
-            color: #5a7a50;
-            font-style: normal;
-            opacity: 0;
-            animation: fadeIn 1.5s 0.3s forwards;
+            color: var(--gold);
+            font-weight: bold;
         }
 
-        /* نوار منو */
+        /* === #4: نوار منوی راست‌چین === */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: rgba(58, 95, 64, 0.92);
+            background: rgba(58, 95, 64, 0.94);
             color: white;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
             z-index: 100;
-            animation: slideInDown 0.8s ease-out;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
-            margin: 0;
-            padding: 0;
-            justify-content: flex-start;
+            gap: 1.1rem;
         }
-
-        .nav-links li {
-            margin: 0 1.1rem;
-        }
-
         .nav-links a {
             color: white;
             text-decoration: none;
             font-size: 1.1rem;
             padding: 0.6rem 0.9rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-            position: relative;
+            border-radius: 12px;
         }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            right: 50%;
-            width: 0;
-            height: 2px;
-            background: #f1c40f;
-            transition: all 0.3s;
-            border-radius: 2px;
-        }
-
         .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
         }
-
-        .nav-links a:hover::after {
-            width: 60%;
-            right: 20%;
-        }
-
         .auth-btn {
-            background: rgba(248, 244, 233, 0.9);
-            color: #3a5f40;
+            background: rgba(248, 244, 233, 0.92);
+            color: var(--primary);
             border: 1px solid #d0d9c8;
             padding: 0.6rem 1.4rem;
             border-radius: 24px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.4s;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
 
-        .auth-btn:hover {
-            background: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-        }
-
-        /* منوی کشویی ارتباط با ما */
+        /* === #5: منوی کشویی ارتباط با ما === */
         .dropdown {
             position: relative;
             display: inline-block;
         }
-
         .dropdown-menu {
             position: absolute;
             top: 100%;
             right: 0;
-            background: white;
-            border-radius: 10px;
+            background: var(--card-bg);
+            border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
             list-style: none;
             padding: 8px 0;
@@ -145,22 +127,14 @@
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
-            z-index: 1000;
+            z-index: 1001;
         }
-
-        .dropdown-menu li {
-            margin: 0;
-        }
-
         .dropdown-menu a {
             display: block;
             padding: 10px 20px;
-            color: #3a5f40;
+            color: var(--text);
             text-decoration: none;
-            font-size: 1.05rem;
-            transition: background 0.2s;
         }
-
         .dropdown-menu a:hover {
             background: #f0f7ed;
         }
@@ -170,45 +144,120 @@
             transform: translateY(0);
         }
 
-        /* محتوای اصلی */
+        /* === #6: محتوای اصلی صفحه === */
         main {
             padding: 3rem 1.5rem;
             max-width: 850px;
             margin: 0 auto;
         }
-
         .bismillah {
             font-size: 2.4rem;
             text-align: center;
-            color: #3a5f40;
+            color: var(--primary);
             margin-bottom: 1.2rem;
             font-weight: bold;
-            opacity: 0;
-            animation: fadeInUp 1s 0.5s forwards;
         }
-
         .bismillah-subtitle {
             text-align: center;
             font-size: 1.3rem;
-            color: #5a7a50;
+            color: var(--text-secondary);
             margin-bottom: 2.5rem;
-            font-style: normal;
-            opacity: 0;
-            animation: fadeInUp 1s 0.7s forwards;
         }
 
-        .welcome-text {
+        /* === #7: بخش آیه، روایت و دعای فرج (خارج از گرید برای وسط‌چین) === */
+        .quran-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem auto 2rem;
+            max-width: 850px;
+            padding: 0 1rem;
+        }
+        .verse-card, .hadith-card {
             background: white;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 6px 20px var(--shadow);
+            position: relative;
+        }
+        .verse-card::before { background: linear-gradient(to bottom, #3a5f40, #5a7a50); }
+        .hadith-card::before { background: linear-gradient(to bottom, #8e44ad, #9b59b6); }
+        .verse-card::before, .hadith-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+        }
+        .verse-header, .hadith-header {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: var(--text);
+            text-align: center;
+        }
+        .verse-text, .hadith-text {
+            font-size: 1.4rem;
+            line-height: 1.9;
+            text-align: center;
+            color: #1a5276;
+            font-weight: bold;
+        }
+        .verse-ref, .hadith-ref {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* === #8: دعای فرج — وسط صفحه (خارج از .quran-section) === */
+        .dua-faraj-centered {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .dua-faraj-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 32px;
+            box-shadow: 0 8px 25px rgba(41, 128, 185, 0.25);
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+        .dua-faraj-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2980b9, #3498db);
+            border-radius: 0 20px 20px 0;
+        }
+        .dua-faraj-header {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 16px;
+        }
+        .dua-faraj-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #1a5276;
+            font-weight: bold;
+        }
+
+        /* === #9: متن معرفی موسسه === */
+        .welcome-text {
+            background: var(--card-bg);
             padding: 30px;
             border-radius: 18px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            box-shadow: 0 6px 20px var(--shadow);
             margin-bottom: 2.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s 0.9s forwards;
             position: relative;
-            overflow: hidden;
         }
-
         .welcome-text::before {
             content: '';
             position: absolute;
@@ -216,26 +265,26 @@
             right: 0;
             width: 6px;
             height: 100%;
-            background: linear-gradient(to bottom, #3a5f40, #5a7a50);
+            background: linear-gradient(to bottom, var(--primary), var(--text-secondary));
+            border-radius: 0 18px 18px 0;
         }
-
         .welcome-text p {
             margin-bottom: 1.1rem;
             font-size: 1.1rem;
             padding-right: 12px;
         }
-
         .highlight {
-            color: #3a5f40;
+            color: var(--primary);
             font-weight: bold;
         }
 
+        /* === #10: دکمه ثبت‌نام === */
         .cta-button {
             display: block;
             width: fit-content;
             margin: 2.5rem auto 0;
             padding: 14px 40px;
-            background: linear-gradient(to left, #3a5f40, #2c4a30);
+            background: linear-gradient(to left, var(--primary), var(--primary-dark));
             color: white;
             text-decoration: none;
             border-radius: 14px;
@@ -243,17 +292,9 @@
             font-weight: bold;
             text-align: center;
             box-shadow: 0 6px 15px rgba(58, 95, 64, 0.3);
-            transition: all 0.4s;
-            opacity: 0;
-            animation: fadeInUp 1s 1.1s forwards;
         }
 
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(58, 95, 64, 0.4);
-        }
-
-        /* فوتر */
+        /* === #11: فوتر === */
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -264,45 +305,8 @@
             border-top: 1px solid #eaeaea;
         }
 
-        /* انیمیشن‌ها */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        /* موبایل */
-        @media (max-width: 650px) {
+        /* === #12: واکنش‌گرا (موبایل) === */
+        @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 gap: 12px;
@@ -312,88 +316,183 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .site-header h1 {
-                font-size: 1.8rem;
-            }
-            .bismillah {
-                font-size: 2rem;
-            }
-            .bismillah-subtitle {
-                font-size: 1.15rem;
-            }
-            main {
-                padding: 2rem 1rem;
-            }
-            .welcome-text p {
-                font-size: 1rem;
+            .quran-section {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-<title>مؤسسه فرهنگی آموزشی بقیةالله عج | آموزش قرآن، علوم اسلامی و فرهنگ اهل‌بیت (ع)</title>
-<meta name="description" content="مؤسسه فرهنگی آموزشی بقیةالله عج با هدف گسترش فرهنگ قرآنی، آموزش علوم اسلامی، تربیت نسل متعهد و همراهی در راه فرج آقا (عج) فعالیت می‌کند. ثبت‌نام در دوره‌ها، وبلاگ‌های آموزشی و ارتباط با ما.">
-<meta name="keywords" content="بقیةالله عج, مؤسسه قرآنی, آموزش علوم اسلامی, ثبت نام دوره قرآن, انتظار فرج, اهل بیت, امام زمان عج, فرهنگ اسلامی, وبلاگ مذهبی, کانال ایتا بقیةالله">
-<meta property="og:title" content="مؤسسه فرهنگی آموزشی بقیةالله عج">
-<meta property="og:description" content="با ما همراه باشید تا در راه فرج آقا (عج) گام برداریم. آموزش، تربیت و همراهی معنوی.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com">
-<meta property="og:image" content="https://besharatizadehmh-ux.github.io/1-/https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.asr-entezar.ir%2Farchives%2F65377&psig=AOvVaw152kxzJjZTuPjFPjCGTbDP&ust=1760728730087000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMCW-ua3qZADFQAAAAAdAAAAABAE">
-<link rel="canonical" href="https://yourdomain.com/" />
-
 <body>
-
-    <!-- هدر با عنوان موسسه -->
+    
+    <!-- #3: هدر -->
     <header>
         <div class="site-header">
             <h1>مؤسسه فرهنگی آموزشی بقیةالله عج</h1>
             <p class="subtitle">اللهم بارک لمولانا صاحب العصر و الزمان</p>
         </div>
-
-        <!-- نوار منو -->
+        <!-- #4 و #5: نوار منو -->
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">صفحه اصلی</a></li>
                 <li><a href="about.html">معرفی موسسه</a></li>
                 <li><a href="blogs.html">وبلاگ‌ها</a></li>
                 <li class="dropdown">
-                    <a href="#" id="contactToggle">ارتباط با ما</a>
-                    <ul class="dropdown-menu" id="contactMenu">
+                    <a href="#">ارتباط با ما</a>
+                    <ul class="dropdown-menu">
                         <li><a href="https://eitaa.com/bagheiat313" target="_blank" rel="noopener">کانال ایتا</a></li>
                         <li><a href="https://www.instagram.com/baghiyat313a?igsh=dmEyYno0MHdyNDRz" target="_blank" rel="noopener">اینستاگرام</a></li>
                         <li><a href="register.html">ثبت‌نام</a></li>
                     </ul>
                 </li>
             </ul>
-            <a href="register.html" class="auth-btn">ورود / ثبت‌نام</a>
+            <a href="login.html" class="auth-btn">ورود</a>
         </nav>
     </header>
 
-    <!-- محتوای اصلی -->
+    <!-- #6: محتوای اصلی -->
     <main>
         <div class="bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِیمِ</div>
         <p class="bismillah-subtitle">به نام خداوند بخشنده مهربان</p>
 
-        <div class="welcome-text">
-            <p>
-                سلام خوش اومدی به سایت مؤسسه فرهنگی آموزشی <span class="highlight">بقیةالله عج</span>.
-            </p>
-            <p>
-                مؤسسه ما ترویج فرهنگ قرآنی، آموزش علوم اسلامی و تربیت نسلی آگاه و متعهد فعالیت می‌کنه.
-            </p>
-            <p>
-                در این سایت می‌تونید در دوره‌های آموزشی ثبت‌نام کنید، با فعالیت‌های موسسه آشنا بشین و از منابع قرآنی و مذهبی بهره‌مند بشین.
-            </p>
+        <!-- #7: آیه و روایت -->
+        <div class="quran-section">
+            <div class="verse-card">
+                <div class="verse-header">آیه روز</div>
+                <div class="verse-text">یَا أَیُّهَا الَّذِینَ آمَنُوا اتَّقُوا اللَّهَ وَقُولُوا قَوْلًا سَدِیدًا</div>
+                <div class="verse-ref">سوره احزاب، آیه ۷۰</div>
+            </div>
+            <div class="hadith-card">
+                <div class="hadith-header">حدیث روز</div>
+                <div class="hadith-text">«حَامِلُ الْقُرْآنِ هُوَ الْمُعَلِّمُ بِكَلَامِ اللَّهِ، وَالْمُبَشِّرُ بِنُورِ اللَّهِ»</div>
+                <div class="hadith-ref">کنزالعمال، جلد ۱، ص ۵۲۳</div>
+            </div>
         </div>
 
+        <!-- #8: دعای فرج — وسط صفحه -->
+        <div class="dua-faraj-centered">
+            <div class="dua-faraj-card">
+                <div class="dua-faraj-header">دعای فرج</div>
+                <div class="dua-faraj-text">اللَّهُمَّ اجْعَلْنِی فِی ذَلِکَ الْیَوْمِ مِنْ أَعْوَانِهِ وَأَنْصَارِهِ وَالذَّابِّینَ عَنْهُ</div>
+            </div>
+        </div>
+
+        <!-- #9: معرفی موسسه -->
+        <div class="welcome-text">
+            <p>سلام خوش اومدی به سایت مؤسسه فرهنگی آموزشی <span class="highlight">بقیةالله عج</span>.</p>
+            <p>مؤسسه ما با هدف ترویج فرهنگ قرآنی، آموزش علوم اسلامی و تربیت نسلی آگاه و متعهد فعالیت می‌کنه.</p>
+            <p>در این سایت می‌تونید در دوره‌های آموزشی ثبت‌نام کنید، با فعالیت‌های موسسه آشنا بشین و از منابع قرآنی و مذهبی بهره‌مند بشین.</p>
+        </div>
+
+        <!-- #10: دکمه ثبت‌نام -->
         <a href="register.html" class="cta-button">همین الان ثبت‌نام کن</a>
     </main>
 
-    <!-- فوتر -->
+    <!-- #11: فوتر -->
     <footer>
         <p>© ۱۴۰۴ — مؤسسه فرهنگی آموزشی بقیةالله عج | همه حقوق محفوظ است.</p>
     </footer>
 
+    <script>
+        // === لیست ۳۰ آیهٔ روز ===
+        const dailyVerses = [
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا اتَّقُوا اللَّهَ وَقُولُوا قَوْلًا سَدِیدًا", ref: "سوره احزاب، آیه ۷۰" },
+          { text: "إِنَّ اللَّهَ مَعَ الَّذِینَ اتَّقَوا وَالَّذِینَ هُمْ مُحْسِنُونَ", ref: "سوره نحل، آیه ۱۲۸" },
+          { text: "وَأَقِمِ الصَّلَاةَ إِنَّ الصَّلَاةَ تَنْهَى عَنِ الْفَحْشَاءِ وَالْمُنْكَرِ", ref: "سوره عنکبوت، آیه ۴۵" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا اسْتَعِینُوا بِالصَّبْرِ وَالصَّلَاةِ", ref: "سوره بقره، آیه ۱۵۳" },
+          { text: "وَمَنْ یَتَّقِ اللَّهَ یَجْعَلْ لَهُ مَخْرَجًا", ref: "سوره طلاق، آیه ۲" },
+          { text: "إِنَّ مَعَ الْعُسْرِ یُسْرًا", ref: "سوره شرح، آیه ۵" },
+          { text: "وَتَوَکَّلْ عَلَى الْحَیِّ الَّذِی لَا یَمُوتُ", ref: "سوره فرقان، آیه ۵۸" },
+          { text: "یَا أَیُّهَا النَّاسُ اعْبُدُوا رَبَّکُمُ", ref: "سوره بقره، آیه ۲۱" },
+          { text: "وَأَنْفِقُوا فِی سَبِیلِ اللَّهِ", ref: "سوره بقره، آیه ۲۶۷" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا کُونُوا قَوَّامِینَ بِالْقِسْطِ", ref: "سوره نساء، آیه ۱۳۵" },
+          { text: "وَالْعَصْرِ إِنَّ الْإِنْسَانَ لَفِی خُسْرٍ", ref: "سوره عصر، آیات ۱-۲" },
+          { text: "إِنَّ اللَّهَ لَا یُغَیِّرُ مَا بِقَوْمٍ حَتَّى یُغَیِّرُوا مَا بِأَنْفُسِهِمْ", ref: "سوره رعد، آیه ۱۱" },
+          { text: "وَمَنْ یَتَوَکَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ", ref: "سوره طلاق، آیه ۳" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا لَا تَتَّخِذُوا الْیَهُودَ وَالنَّصَارَى أَوْلِیَاءَ", ref: "سوره مائده، آیه ۵۱" },
+          { text: "وَأَحْسِنُوا إِنَّ اللَّهَ یُحِبُّ الْمُحْسِنِینَ", ref: "سوره بقره، آیه ۱۹۵" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ", ref: "سوره آل عمران، آیه ۱۰۲" },
+          { text: "وَاللَّهُ یُحِبُّ الصَّابِرِینَ", ref: "سوره آل عمران، آیه ۱۴۶" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ", ref: "سوره صف، آیه ۲" },
+          { text: "وَمَنْ یَخْشَ اللَّهَ یَجْعَلْ لَهُ مَخْرَجًا", ref: "سوره طلاق، آیه ۲" },
+          { text: "إِنَّ اللَّهَ یُحِبُّ التَّوَّابِینَ وَیُحِبُّ الْمُتَطَهِّرِینَ", ref: "سوره بقره، آیه ۲۲۲" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا اذْکُرُوا اللَّهَ ذِکْرًا کَثِیرًا", ref: "سوره احزاب، آیه ۴۱" },
+          { text: "وَأَقِیمُوا الصَّلَاةَ وَآتُوا الزَّکَاةَ", ref: "سوره بقره، آیه ۴۳" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا لَا تُحَرِّمُوا طَیِّبَاتِ مَا أَحَلَّ اللَّهُ لَکُمْ", ref: "سوره مائده، آیه ۸۷" },
+          { text: "وَاللَّهُ یُرِیدُ أَنْ یَتُوبَ عَلَیْکُمْ", ref: "سوره نساء، آیه ۲۷" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا اتَّقُوا اللَّهَ وَکُونُوا مَعَ الصَّادِقِینَ", ref: "سوره توبه، آیه ۱۱۹" },
+          { text: "وَمَنْ یَعْمَلْ مِنَ الصَّالِحَاتِ وَهُوَ مُؤْمِنٌ فَلَا کُفْرَانَ لِسَعْیِهِ", ref: "سوره کهف، آیه ۳۰" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا لَا تَأْکُلُوا الرِّبَا", ref: "سوره بقره، آیه ۲۷۵" },
+          { text: "وَأَنْفِقُوا مِنْ مَا رَزَقْنَاکُمْ", ref: "سوره بقره، آیه ۲۵۴" },
+          { text: "یَا أَیُّهَا الَّذِینَ آمَنُوا اسْتَجِیبُوا لِلَّهِ وَلِلرَّسُولِ", ref: "سوره انفال، آیه ۲۴" },
+          { text: "وَاللَّهُ یَعْلَمُ مَا فِی السَّمَاوَاتِ وَمَا فِی الْأَرْضِ", ref: "سوره نساء، آیه ۱۳۲" }
+        ];
+      
+        // === لیست ۳۰ حدیث روز ===
+        const dailyHadiths = [
+          { text: "حَامِلُ الْقُرْآنِ هُوَ الْمُعَلِّمُ بِكَلَامِ اللَّهِ، وَالْمُبَشِّرُ بِنُورِ اللَّهِ", ref: "کنزالعمال، جلد ۱، ص ۵۲۳" },
+          { text: "خَیْرُکُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ", ref: "بخاری، فضائل القرآن" },
+          { text: "مَنْ قَرَأَ حَرْفًا مِنْ کِتَابِ اللَّهِ فَلَهُ بِهِ حَسَنَةٌ", ref: "ترمذی، فضائل القرآن" },
+          { text: "الْقُرْآنُ حُجَّةٌ لَکَ أَوْ عَلَیْکَ", ref: "مسلم، ذکر القرآن" },
+          { text: "أَفْضَلُکُمْ مَنْ یَتَعَلَّمُ الْقُرْآنَ وَیُعَلِّمُهُ", ref: "بخاری، فضائل القرآن" },
+          { text: "مَنْ سَلَکَ طَرِیقًا یَلْتَمِسُ فِیهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِیقًا إِلَى الْجَنَّةِ", ref: "مسلم، فضائل الصحابه" },
+          { text: "اطْلُبُوا الْعِلْمَ فَإِنَّ طَلَبَهُ فَرِیضَةٌ عَلَى کُلِّ مُسْلِمٍ", ref: "ابن ماجه، مقدمه" },
+          { text: "الْعُلَمَاءُ وَرَثَةُ الْأَنْبِیَاءِ", ref: "ابو داود، علم" },
+          { text: "مَنْ خَرَجَ فِی طَلَبِ الْعِلْمِ فَهُوَ فِی سَبِیلِ اللَّهِ", ref: "ترمذی، علم" },
+          { text: "الْعِلْمُ خَزَائِنُهُ الْمَسَائِلُ", ref: "بحارالانوار، جلد ۱" },
+          { text: "الْعِلْمُ زِینَةُ الْأَتْقِیَاءِ", ref: "غُرَرُ الحِکَم" },
+          { text: "مَنْ عَمِلَ بِغَیْرِ عِلْمٍ کَانَ مَا یُفْسِدُ أَکْثَرَ مِمَّا یُصْلِحُ", ref: "نهج البلاغه، خطبه ۱۷" },
+          { text: "الْعِلْمُ سَیِّدٌ وَالْعَمَلُ تَابِعُهُ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ أَفْضَلُ مِنَ الْمَالِ", ref: "نهج البلاغه، خطبه ۱۷" },
+          { text: "مَنْ أَحَبَّ أَنْ یَعْلَمَ قَدْرَ عِلْمِهِ فَلْیَنْظُرْ فِیمَا یَعْمَلُ بِهِ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ ضَالَّةُ الْمُؤْمِنِ", ref: "مستدرک الحاکم، جلد ۱" },
+          { text: "مَنْ زَادَ عِلْمُهُ وَلَمْ یَزْدَدْ حِلْمُهُ لَمْ یَزْدَدْ إِلَّا شُرًّا", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یُکْسِبُ الْعِزَّ", ref: "بحارالانوار، جلد ۱" },
+          { text: "مَنْ أَخَذَ الْعِلْمَ مِنْ مَظَانِّهِ لَمْ یَضُرَّهُ جَهْلُ مَنْ تَرَکَهُ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یَدْفَعُ الْبَلَا", ref: "بحارالانوار، جلد ۱" },
+          { text: "مَنْ عَلِمَ ثُمَّ عَمِلَ کَانَ مَثَلُهُ کَمَثَلِ الْمُصْعَدِ فِی السَّمَاءِ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یَنْفَعُ بِالْعَمَلِ", ref: "بحارالانوار، جلد ۱" },
+          { text: "مَنْ لَمْ یَتَعَلَّمْ فِی صِغَرِهِ لَمْ یَنْتَفِعْ بِهِ فِی کِبَرِهِ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یَزِیدُ الْعَمَلَ خَیْرًا", ref: "بحارالانوار، جلد ۱" },
+          { text: "مَنْ عَلِمَ وَعَمِلَ کَانَ لَهُ أَجْرَانِ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یَدْعُو إِلَى التَّقْوَى", ref: "بحارالانوار، جلد ۱" },
+          { text: "مَنْ أَرَادَ الدُّنْیَا فَعَلَیْهِ بِالْعِلْمِ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یَبْقَى وَالْمَالُ یَفْنَى", ref: "بحارالانوار، جلد ۱" },
+          { text: "مَنْ عَلِمَ وَلَمْ یَعْمَلْ کَانَ کَالْجَاهِلِ", ref: "غُرَرُ الحِکَم" },
+          { text: "الْعِلْمُ یَرْفَعُ أَهْلَهُ", ref: "بحارالانوار، جلد ۱" }
+        ];
+      
+        // === دعای فرج ثابت ===
+        const duaFaraj = "اللَّهُمَّ عَجِّلْ لِوَلِیِّكَ الْفَرَجَ وَاجْعَلْنَا مِنَ الْمُنْتَظِرِینَ لِظُهُورِهِ";
+      
+        // === محاسبهٔ شمارهٔ روز (۰ تا ۲۹) ===
+        function getDayIndex() {
+          const now = new Date();
+          const start = new Date(now.getFullYear(), now.getMonth(), 1); // اول ماه
+          const diffTime = now - start;
+          const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+          return diffDays % 30;
+        }
+      
+        // === نمایش محتوای روزانه ===
+        function displayDailyContent() {
+          const dayIndex = getDayIndex();
+          
+          // آیه روز
+          const verse = dailyVerses[dayIndex];
+          document.querySelector('.verse-text').textContent = verse.text;
+          document.querySelector('.verse-ref').textContent = verse.ref;
+          
+          // حدیث روز
+          const hadith = dailyHadiths[dayIndex];
+          document.querySelector('.hadith-text').textContent = hadith.text;
+          document.querySelector('.hadith-ref').textContent = hadith.ref;
+          
+          // دعای فرج (ثابت)
+          document.querySelector('.dua-faraj-text').textContent = duaFaraj;
+        }
+      
+        // اجرای تابع هنگام بارگذاری صفحه
+        document.addEventListener('DOMContentLoaded', displayDailyContent);
+      </script>
 </body>
 </html>
-
-google-site-verification: google064e1aa1f09f9b81.html

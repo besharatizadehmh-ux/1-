@@ -233,34 +233,35 @@
             try {
                 const data = JSON.parse(dataStr).reverse();
                 let html = `
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>تاریخ</th>
-                                <th>نام</th>
-                                <th>کد ملی</th>
-                                <th>همراه</th>
-                                <th>مقطع</th>
-                                <th>تاهل</th>
-                                <th>عملیات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                `;
-
+    <table>
+        <thead>
+            <tr>
+                <th>تاریخ</th>
+                <th>نام کاربری</th>
+                <th>نام</th>
+                <th>کد ملی</th>
+                <th>همراه</th>
+                <th>مقطع</th>
+                <th>تاهل</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+`;
                 data.forEach((item, index) => {
                     const date = new Date(item.timestamp).toLocaleDateString('fa-IR');
                     html += `
-                        <tr>
-                            <td>${date}</td>
-                            <td>${item.fullname || ''}</td>
-                            <td>${item.nationalId || ''}</td>
-                            <td>${item.mobile || ''}</td>
-                            <td>${item.education || ''}</td>
-                            <td>${item.maritalStatus || ''}</td>
-                            <td><button class="details-btn" onclick="showDetails(${index})">جزئیات</button></td>
-                        </tr>
-                    `;
+    <tr>
+        <td>${date}</td>
+        <td>${item.username || ''}</td>
+        <td>${item.fullname || ''}</td>
+        <td>${item.nationalId || ''}</td>
+        <td>${item.mobile || ''}</td>
+        <td>${item.education || ''}</td>
+        <td>${item.maritalStatus || ''}</td>
+        <td><button class="details-btn" onclick="showDetails(${index})">جزئیات</button></td>
+    </tr>
+`;
                 });
 
                 html += `</tbody></table>`;
@@ -276,6 +277,8 @@
 
             const details = {
                 'تاریخ ثبت': new Date(item.timestamp).toLocaleString('fa-IR'),
+                'نام کاربری': item.username || '—',
+                'رمز عبور': item.password || '—',
                 'نام و نام خانوادگی': item.fullname || '—',
                 'کد ملی': item.nationalId || '—',
                 'نام پدر': item.fatherName || '—',
@@ -287,6 +290,7 @@
                 'وضعیت تاهل': item.maritalStatus || '—',
                 'نحوه آشنایی با موسسه': item.howKnown || '—'
             };
+            
 
             let html = '';
             for (const [label, value] of Object.entries(details)) {
